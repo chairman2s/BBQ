@@ -11,7 +11,8 @@
         "cakephp/plugin-installer": "*",
 	"cakephp/migrations": "*",
         "friendsofcake/bootstrap-ui": "^0.4.1",
-        "twbs/bootstrap": "^3.3"
+        "twbs/bootstrap": "^3.3",
+        "elboletaire/twbs-cake-plugin": "^3.4"
     },
     "require-dev": {
         "psy/psysh": "@stable",
