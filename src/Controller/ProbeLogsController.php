@@ -127,10 +127,15 @@ class ProbeLogsController extends AppController
     public function viewgooglegraph()
             
     {
-        $probeLogs = $this->ProbeLogs->find('all')->order(['Timestamp' => 'ASC']);
         
-        $this->set(compact('probeLogs'));
-        $this->set('_serialize', ['probeLogs']);
+        $probeLogs = $this->ProbeLogs->find('all')->where(['Events_id =' => $this->request->params['pass']['0']])->order(['Timestamp' => 'ASC'])->contain(['Probes']);
+        if ($probeLogs->count() > 0){
+            $this->set(compact('probeLogs'));
+            $this->set('_serialize', ['probeLogs']);
+        }else{
+            $this->Flash->error(__('No Probe data was saved for this Event'));
+            return $this->redirect(['controller' => 'Events', 'action' => 'index']);
+        }
     }
     
     /**
