@@ -124,6 +124,22 @@ class ProbeLogsController extends AppController
         $this->set('_serialize', ['probeLogs']);
     }
     
+    public function viewgooglegraph()
+            
+    {
+        $probeLogs = $this->ProbeLogs->find('all')->order(['Timestamp' => 'ASC']);
+        
+        $this->set(compact('probeLogs'));
+        $this->set('_serialize', ['probeLogs']);
+    }
+    
+    /**
+     * View method
+     *
+     * @param string|null $id Probe Log id.
+     * @return \Cake\Network\Response|null
+     * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
+     */
     /**
      * View method
      *

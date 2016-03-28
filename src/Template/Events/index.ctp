@@ -18,6 +18,8 @@
                 <th><?= $this->Paginator->sort('Date') ?></th>
                 <th><?= $this->Paginator->sort('Cut_id') ?></th>
                 <th><?= $this->Paginator->sort('Equipment_id') ?></th>
+                <th><?= $this->Paginator->sort('Created') ?></th>
+                <th><?= $this->Paginator->sort('Modified') ?></th>
                 <th class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -29,9 +31,13 @@
                 <td><?= h($event->Date) ?></td>
                 <td><?= $event->has('cut') ? $this->Html->link($event->cut->Name, ['controller' => 'Cuts', 'action' => 'view', $event->cut->id]) : '' ?></td>
                 <td><?= $event->has('equipment') ? $this->Html->link($event->equipment->Name, ['controller' => 'Equipment', 'action' => 'view', $event->equipment->Id]) : '' ?></td>
+                <td><?= h($event->Created) ?></td>
+                <td><?= h($event->Modified) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $event->Id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $event->Id]) ?>
+                    <?= $this->Html->link(__('Chart'), ['controller' => 'ProbeLogs','action' => 'viewgooglegraph', $event->Id]) ?>
+                    
                     <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $event->Id], ['confirm' => __('Are you sure you want to delete # {0}?', $event->Id)]) ?>
                 </td>
             </tr>
