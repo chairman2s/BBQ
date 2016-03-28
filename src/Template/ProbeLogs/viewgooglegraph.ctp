@@ -16,6 +16,15 @@
 <div id="content" class="probeLogs index large-9 medium-8 columns content">
     <h3><?= __('Probe Logs') ?></h3>
 <div id="chart_div"></div>
+<?php
+
+foreach ($probeLogs as $probeLog){
+    //debug ($probeLog->Timestamp->i18nFormat('yyyy,MM,dd,hh,mm'));
+    //debug ($probeLog);
+    //debug ($probeLog->probe->Name);
+    
+};
+?>
 <script type='text/javascript'>//<![CDATA[
 
 google.charts.load('current', {
@@ -26,7 +35,7 @@ google.charts.setOnLoadCallback(drawLogScales);
 function drawLogScales() {
   var data = new google.visualization.DataTable();
    data.addColumn('datetime', 'x');
-  data.addColumn('number', 'Probe 1');
+  data.addColumn('number', <?php echo "'".$probeLog->probe->Name ."'"; ?>);
 
 
   data.addRows([
@@ -69,5 +78,4 @@ echo ",[new Date(".$gchartdatetime ."),".h($probeLog->Value)."]";
 //]]> 
 
 </script>
-
 </div>
