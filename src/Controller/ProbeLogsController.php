@@ -122,7 +122,6 @@ class ProbeLogsController extends AppController
         $probeLogs = $this->ProbeLogs->find('all')->order(['Timestamp' => 'ASC']);
         $this->set(compact('probeLogs'));
         $this->set('_serialize', ['probeLogs']);
-       
     }
     
     /**
