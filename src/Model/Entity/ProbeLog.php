@@ -8,11 +8,13 @@ use Cake\ORM\Entity;
  *
  * @property int $Id
  * @property int $Probes_id
+ * @property \App\Model\Entity\Probe $probe
  * @property int $Events_id
+ * @property \App\Model\Entity\Event $event
  * @property int $Value
  * @property \Cake\I18n\Time $Timestamp
- * @property \App\Model\Entity\Probe $probe
- * @property \App\Model\Entity\Event $event
+ * @property \Cake\I18n\Time $Created
+ * @property \Cake\I18n\Time $Modified
  */
 class ProbeLog extends Entity
 {

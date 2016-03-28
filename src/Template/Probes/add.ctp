@@ -10,6 +10,8 @@
         <legend><?= __('Add Probe') ?></legend>
         <?php
             echo $this->Form->input('Name');
+            echo $this->Form->input('Created');
+            echo $this->Form->input('Modified');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

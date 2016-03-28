@@ -9,16 +9,17 @@
     </ul>
 </nav>
 <div class="probeLogs form large-9 medium-8 columns content">
-    <?= $this->Form->create($probeLog) ?>
+    <?= $this->Form->create($probeLog,['type' => 'file']) ?>
     <fieldset>
-        <legend><?= __('Add Probe Log') ?></legend>
+        <legend><?= __('Add Probe Log from iGrill Mini') ?></legend>
+
         <?php
-            echo $this->Form->input('Probes_id', ['options' => $probes]);
-            echo $this->Form->input('Events_id', ['options' => $events]);
-            echo $this->Form->input('Value');
-            echo $this->Form->input('Timestamp', ['empty' => true]);
-            echo $this->Form->input('Created');
-            echo $this->Form->input('Modified');
+                echo $this->Form->input('Events_id', ['options' => $events]);    
+                echo $this->Form->input('CSVFile', ['type' => 'file',
+                                        'label' => [
+                                                    'class' => 'thingy',
+                                                    'text' => 'Remember to name the probe in the app as the same as here'
+                                                    ]]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

@@ -41,6 +41,7 @@ use Cake\Routing\Router;
  *
  */
 Router::defaultRouteClass('DashedRoute');
+Router::extensions(['json']);
 
 Router::scope('/', function (RouteBuilder $routes) {
     /**
@@ -54,7 +55,7 @@ $routes->connect('/', ['controller' => 'Events', 'action' => 'index', 'home']);
      * ...and connect the rest of 'Pages' controller's URLs.
      */
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
-
+    $routes->connect('/login/*', array('plugin' => 'CakeDC/Users', 'controller' => 'Users', 'action' => 'login'));
     /**
      * Connect catchall routes for all controllers.
      *

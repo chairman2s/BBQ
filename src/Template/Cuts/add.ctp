@@ -13,6 +13,8 @@
         <?php
             echo $this->Form->input('Animal_id', ['options' => $animals]);
             echo $this->Form->input('Name');
+            echo $this->Form->input('Created');
+            echo $this->Form->input('Modified');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

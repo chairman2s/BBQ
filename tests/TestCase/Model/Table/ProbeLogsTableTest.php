@@ -30,7 +30,9 @@ class ProbeLogsTableTest extends TestCase
         'app.cuts',
         'app.animals',
         'app.equipment',
-        'app.heat_sources'
+        'app.heat_sources',
+        'app.users',
+        'app.social_accounts'
     ];
 
     /**

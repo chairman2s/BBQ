@@ -25,6 +25,10 @@ class ProbeLogsTable extends Table
     public function initialize(array $config)
     {
         parent::initialize($config);
+        
+        $this->addBehavior('Josegonzalez/Upload.Upload', [
+            'photo',
+        ]);
 
         $this->table('probe_logs');
         $this->displayField('Id');
@@ -59,6 +63,16 @@ class ProbeLogsTable extends Table
         $validator
             ->dateTime('Timestamp')
             ->allowEmpty('Timestamp');
+
+        $validator
+            ->dateTime('Created')
+            ->requirePresence('Created', 'create')
+            ->notEmpty('Created');
+
+        $validator
+            ->dateTime('Modified')
+            ->requirePresence('Modified', 'create')
+            ->notEmpty('Modified');
 
         return $validator;
     }
