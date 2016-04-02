@@ -25,7 +25,9 @@ class EquipmentTableTest extends TestCase
      */
     public $fixtures = [
         'app.equipment',
-        'app.heat_sources'
+        'app.heat_sources',
+        'app.users',
+        'app.social_accounts'
     ];
 
     /**

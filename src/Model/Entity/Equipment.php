@@ -10,6 +10,10 @@ use Cake\ORM\Entity;
  * @property int $HeatSource_id
  * @property \App\Model\Entity\HeatSource $heat_source
  * @property string $Name
+ * @property \Cake\I18n\Time $Created
+ * @property \Cake\I18n\Time $Modified
+ * @property string $user_id
+ * @property \App\Model\Entity\User $user
  */
 class Equipment extends Entity
 {

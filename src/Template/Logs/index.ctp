@@ -2,6 +2,10 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Log'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Events'), ['controller' => 'Events', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Event'), ['controller' => 'Events', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Log Types'), ['controller' => 'LogTypes', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Log Type'), ['controller' => 'LogTypes', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="logs index large-9 medium-8 columns content">
@@ -13,6 +17,8 @@
                 <th><?= $this->Paginator->sort('Event_id') ?></th>
                 <th><?= $this->Paginator->sort('LogType_id') ?></th>
                 <th><?= $this->Paginator->sort('Timestamp') ?></th>
+                <th><?= $this->Paginator->sort('Created') ?></th>
+                <th><?= $this->Paginator->sort('Modified') ?></th>
                 <th class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -20,9 +26,11 @@
             <?php foreach ($logs as $log): ?>
             <tr>
                 <td><?= $this->Number->format($log->Id) ?></td>
-                <td><?= $this->Number->format($log->Event_id) ?></td>
-                <td><?= $this->Number->format($log->LogType_id) ?></td>
+                <td><?= $log->has('event') ? $this->Html->link($log->event->Name, ['controller' => 'Events', 'action' => 'view', $log->event->Id]) : '' ?></td>
+                <td><?= $log->has('log_type') ? $this->Html->link($log->log_type->Name, ['controller' => 'LogTypes', 'action' => 'view', $log->log_type->Id]) : '' ?></td>
                 <td><?= h($log->Timestamp) ?></td>
+                <td><?= h($log->Created) ?></td>
+                <td><?= h($log->Modified) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $log->Id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $log->Id]) ?>

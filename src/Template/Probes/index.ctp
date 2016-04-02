@@ -11,6 +11,8 @@
             <tr>
                 <th><?= $this->Paginator->sort('Id') ?></th>
                 <th><?= $this->Paginator->sort('Name') ?></th>
+                <th><?= $this->Paginator->sort('Created') ?></th>
+                <th><?= $this->Paginator->sort('Modified') ?></th>
                 <th class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -19,6 +21,8 @@
             <tr>
                 <td><?= $this->Number->format($probe->Id) ?></td>
                 <td><?= h($probe->Name) ?></td>
+                <td><?= h($probe->Created) ?></td>
+                <td><?= h($probe->Modified) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $probe->Id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $probe->Id]) ?>

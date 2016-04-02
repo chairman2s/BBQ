@@ -10,7 +10,7 @@
     </ul>
 </nav>
 <div class="cuts view large-9 medium-8 columns content">
-    <h3><?= h($cut->name) ?></h3>
+    <h3><?= h($cut->Name) ?></h3>
     <table class="vertical-table">
         <tr>
             <th><?= __('Animal') ?></th>
@@ -23,6 +23,14 @@
         <tr>
             <th><?= __('Id') ?></th>
             <td><?= $this->Number->format($cut->id) ?></td>
+        </tr>
+        <tr>
+            <th><?= __('Created') ?></th>
+            <td><?= h($cut->Created) ?></td>
+        </tr>
+        <tr>
+            <th><?= __('Modified') ?></th>
+            <td><?= h($cut->Modified) ?></td>
         </tr>
     </table>
 </div>

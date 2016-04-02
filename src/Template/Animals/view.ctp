@@ -18,5 +18,13 @@
             <th><?= __('Id') ?></th>
             <td><?= $this->Number->format($animal->Id) ?></td>
         </tr>
+        <tr>
+            <th><?= __('Created') ?></th>
+            <td><?= h($animal->Created) ?></td>
+        </tr>
+        <tr>
+            <th><?= __('Modified') ?></th>
+            <td><?= h($animal->Modified) ?></td>
+        </tr>
     </table>
 </div>

@@ -54,6 +54,9 @@ class EquipmentController extends AppController
         $equipment = $this->Equipment->newEntity();
         if ($this->request->is('post')) {
             $equipment = $this->Equipment->patchEntity($equipment, $this->request->data);
+            $equipment['user_id'] = $this->request->session()->read('Auth.User.id');
+      
+                    
             if ($this->Equipment->save($equipment)) {
                 $this->Flash->success(__('The equipment has been saved.'));
                 return $this->redirect(['action' => 'index']);

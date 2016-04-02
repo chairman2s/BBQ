@@ -8,7 +8,7 @@
     </ul>
 </nav>
 <div class="logTypes view large-9 medium-8 columns content">
-    <h3><?= h($logType->Id) ?></h3>
+    <h3><?= h($logType->Name) ?></h3>
     <table class="vertical-table">
         <tr>
             <th><?= __('Name') ?></th>
@@ -17,6 +17,14 @@
         <tr>
             <th><?= __('Id') ?></th>
             <td><?= $this->Number->format($logType->Id) ?></td>
+        </tr>
+        <tr>
+            <th><?= __('Created') ?></th>
+            <td><?= h($logType->Created) ?></td>
+        </tr>
+        <tr>
+            <th><?= __('Modified') ?></th>
+            <td><?= h($logType->Modified) ?></td>
         </tr>
     </table>
 </div>

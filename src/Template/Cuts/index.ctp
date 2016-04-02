@@ -14,6 +14,8 @@
                 <th><?= $this->Paginator->sort('id') ?></th>
                 <th><?= $this->Paginator->sort('Animal_id') ?></th>
                 <th><?= $this->Paginator->sort('Name') ?></th>
+                <th><?= $this->Paginator->sort('Created') ?></th>
+                <th><?= $this->Paginator->sort('Modified') ?></th>
                 <th class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -23,6 +25,8 @@
                 <td><?= $this->Number->format($cut->id) ?></td>
                 <td><?= $cut->has('animal') ? $this->Html->link($cut->animal->Name, ['controller' => 'Animals', 'action' => 'view', $cut->animal->Id]) : '' ?></td>
                 <td><?= h($cut->Name) ?></td>
+                <td><?= h($cut->Created) ?></td>
+                <td><?= h($cut->Modified) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $cut->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $cut->id]) ?>

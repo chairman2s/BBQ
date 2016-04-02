@@ -15,16 +15,16 @@
     <h3><?= h($probeLog->Id) ?></h3>
     <table class="vertical-table">
         <tr>
+            <th><?= __('Probe') ?></th>
+            <td><?= $probeLog->has('probe') ? $this->Html->link($probeLog->probe->Name, ['controller' => 'Probes', 'action' => 'view', $probeLog->probe->Id]) : '' ?></td>
+        </tr>
+        <tr>
+            <th><?= __('Event') ?></th>
+            <td><?= $probeLog->has('event') ? $this->Html->link($probeLog->event->Name, ['controller' => 'Events', 'action' => 'view', $probeLog->event->Id]) : '' ?></td>
+        </tr>
+        <tr>
             <th><?= __('Id') ?></th>
             <td><?= $this->Number->format($probeLog->Id) ?></td>
-        </tr>
-        <tr>
-            <th><?= __('Probes Id') ?></th>
-            <td><?= $this->Number->format($probeLog->Probes_id) ?></td>
-        </tr>
-        <tr>
-            <th><?= __('Events Id') ?></th>
-            <td><?= $this->Number->format($probeLog->Events_id) ?></td>
         </tr>
         <tr>
             <th><?= __('Value') ?></th>
@@ -33,6 +33,14 @@
         <tr>
             <th><?= __('Timestamp') ?></th>
             <td><?= h($probeLog->Timestamp) ?></td>
+        </tr>
+        <tr>
+            <th><?= __('Created') ?></th>
+            <td><?= h($probeLog->Created) ?></td>
+        </tr>
+        <tr>
+            <th><?= __('Modified') ?></th>
+            <td><?= h($probeLog->Modified) ?></td>
         </tr>
     </table>
 </div>

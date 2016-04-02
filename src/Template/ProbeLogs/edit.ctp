@@ -19,10 +19,12 @@
     <fieldset>
         <legend><?= __('Edit Probe Log') ?></legend>
         <?php
-            echo $this->Form->input('Probes_id');
-            echo $this->Form->input('Events_id');
+            echo $this->Form->input('Probes_id', ['options' => $probes]);
+            echo $this->Form->input('Events_id', ['options' => $events]);
             echo $this->Form->input('Value');
             echo $this->Form->input('Timestamp', ['empty' => true]);
+            echo $this->Form->input('Created');
+            echo $this->Form->input('Modified');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

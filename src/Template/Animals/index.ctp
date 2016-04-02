@@ -11,6 +11,8 @@
             <tr>
                 <th><?= $this->Paginator->sort('Id') ?></th>
                 <th><?= $this->Paginator->sort('Name') ?></th>
+                <th><?= $this->Paginator->sort('Created') ?></th>
+                <th><?= $this->Paginator->sort('Modified') ?></th>
                 <th class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -19,6 +21,8 @@
             <tr>
                 <td><?= $this->Number->format($animal->Id) ?></td>
                 <td><?= h($animal->Name) ?></td>
+                <td><?= h($animal->Created) ?></td>
+                <td><?= h($animal->Modified) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $animal->Id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $animal->Id]) ?>

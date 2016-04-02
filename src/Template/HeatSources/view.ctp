@@ -8,7 +8,7 @@
     </ul>
 </nav>
 <div class="heatSources view large-9 medium-8 columns content">
-    <h3><?= h($heatSource->Id) ?></h3>
+    <h3><?= h($heatSource->Name) ?></h3>
     <table class="vertical-table">
         <tr>
             <th><?= __('Name') ?></th>
@@ -17,6 +17,14 @@
         <tr>
             <th><?= __('Id') ?></th>
             <td><?= $this->Number->format($heatSource->Id) ?></td>
+        </tr>
+        <tr>
+            <th><?= __('Created') ?></th>
+            <td><?= h($heatSource->Created) ?></td>
+        </tr>
+        <tr>
+            <th><?= __('Modified') ?></th>
+            <td><?= h($heatSource->Modified) ?></td>
         </tr>
     </table>
 </div>

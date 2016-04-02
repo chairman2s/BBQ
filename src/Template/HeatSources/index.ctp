@@ -11,6 +11,8 @@
             <tr>
                 <th><?= $this->Paginator->sort('Id') ?></th>
                 <th><?= $this->Paginator->sort('Name') ?></th>
+                <th><?= $this->Paginator->sort('Created') ?></th>
+                <th><?= $this->Paginator->sort('Modified') ?></th>
                 <th class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -19,6 +21,8 @@
             <tr>
                 <td><?= $this->Number->format($heatSource->Id) ?></td>
                 <td><?= h($heatSource->Name) ?></td>
+                <td><?= h($heatSource->Created) ?></td>
+                <td><?= h($heatSource->Modified) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $heatSource->Id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $heatSource->Id]) ?>

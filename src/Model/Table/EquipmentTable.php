@@ -11,6 +11,7 @@ use Cake\Validation\Validator;
  * Equipment Model
  *
  * @property \Cake\ORM\Association\BelongsTo $HeatSources
+ * @property \Cake\ORM\Association\BelongsTo $Users
  */
 class EquipmentTable extends Table
 {
@@ -33,6 +34,10 @@ class EquipmentTable extends Table
             'foreignKey' => 'HeatSource_id',
             'joinType' => 'INNER'
         ]);
+        $this->belongsTo('Users', [
+            'foreignKey' => 'user_id',
+            'joinType' => 'INNER'
+        ]);
     }
 
     /**
@@ -50,6 +55,16 @@ class EquipmentTable extends Table
         $validator
             ->allowEmpty('Name');
 
+        $validator
+            ->dateTime('Created')
+            ->requirePresence('Created', 'create')
+            ->notEmpty('Created');
+
+        $validator
+            ->dateTime('Modified')
+            ->requirePresence('Modified', 'create')
+            ->notEmpty('Modified');
+
         return $validator;
     }
 
@@ -63,6 +78,7 @@ class EquipmentTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['HeatSource_id'], 'HeatSources'));
+        $rules->add($rules->existsIn(['user_id'], 'Users'));
         return $rules;
     }
 }

@@ -18,5 +18,13 @@
             <th><?= __('Id') ?></th>
             <td><?= $this->Number->format($probe->Id) ?></td>
         </tr>
+        <tr>
+            <th><?= __('Created') ?></th>
+            <td><?= h($probe->Created) ?></td>
+        </tr>
+        <tr>
+            <th><?= __('Modified') ?></th>
+            <td><?= h($probe->Modified) ?></td>
+        </tr>
     </table>
 </div>

@@ -23,6 +23,8 @@
             echo $this->Form->input('Date', ['empty' => true]);
             echo $this->Form->input('Cut_id', ['options' => $cuts]);
             echo $this->Form->input('Equipment_id', ['options' => $equipment]);
+            echo $this->Form->input('Created');
+            echo $this->Form->input('Modified');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
