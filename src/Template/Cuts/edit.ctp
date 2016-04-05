@@ -1,6 +1,7 @@
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+<!-- Menu -->
+<nav id="menu">
+    <h2><?= __('Menu') ?></h2>
+    <ul>
         <li><?= $this->Form->postLink(
                 __('Delete'),
                 ['action' => 'delete', $cut->id],
@@ -12,15 +13,18 @@
         <li><?= $this->Html->link(__('New Animal'), ['controller' => 'Animals', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="cuts form large-9 medium-8 columns content">
-    <?= $this->Form->create($cut) ?>
+<div id="main">
+    <div class="inner">
+    <header>
+        <h1><a href=""><?= __('Cuts'); ?></a></h1>
+    </header>   
+ <?= $this->Form->create($cut) ?>
+        
     <fieldset>
         <legend><?= __('Edit Cut') ?></legend>
         <?php
             echo $this->Form->input('Animal_id', ['options' => $animals]);
             echo $this->Form->input('Name');
-            echo $this->Form->input('Created');
-            echo $this->Form->input('Modified');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

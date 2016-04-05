@@ -96,7 +96,7 @@ if (!Configure::read('debug')) {
  * Set server timezone to UTC. You can change it to another timezone of your
  * choice but using UTC makes time calculations / conversions easier.
  */
-date_default_timezone_set('UTC');
+date_default_timezone_set('Europe/Oslo');
 
 /**
  * Configure the mbstring extension to use the correct encoding.
@@ -191,7 +191,7 @@ Request::addDetector('tablet', function ($request) {
  */
 
 Plugin::load('Migrations');
-Plugin::load('CakeDC/Users', ['routes' => true, 'bootstrap' => true]);
+//Plugin::load('CakeDC/Users', ['routes' => true, 'bootstrap' => true]);
 
 // Only try to load DebugKit in development mode
 // Debug Kit should not be installed on a production system
@@ -221,10 +221,10 @@ Type::build('date')
 Type::build('datetime')
     ->useImmutable()
     ->useLocaleParser();
-//Plugin::load('BootstrapUI');    
+Plugin::load('BootstrapUI');    
 //Plugin::load('Bootstrap', ['bootstrap' => true]);
 
-Plugin::load('Bootstrap', ['bootstrap' => true]);
+//Plugin::load('Bootstrap', ['bootstrap' => true]);
 Plugin::load('Josegonzalez/Upload');
-Plugin::load('ChartJs', ['bootstrap' => false, 'routes' => false]);
+//Plugin::load('ChartJs', ['bootstrap' => false, 'routes' => false]);
 

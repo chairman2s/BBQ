@@ -53,10 +53,11 @@ class EventsController extends AppController
     {
         $event = $this->Events->newEntity();
         if ($this->request->is('post')) {
+            $this->request->data['Date'] = array_slice(date_parse_from_format('Y-m-d H:i', $this->request->data['Date']), 0, 5);
             $event = $this->Events->patchEntity($event, $this->request->data);
             if ($this->Events->save($event)) {
                 $this->Flash->success(__('The event has been saved.'));
-                return $this->redirect(['action' => 'index']);
+               return $this->redirect(['action' => 'index']);
             } else {
                 $this->Flash->error(__('The event could not be saved. Please, try again.'));
             }

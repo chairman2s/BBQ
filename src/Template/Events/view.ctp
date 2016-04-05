@@ -1,6 +1,9 @@
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+<!-- view.ctp start -->
+
+<!-- Menu -->
+<nav id="menu">
+    <h2><?= __('Actions') ?></h2>
+    <ul>
         <li><?= $this->Html->link(__('Edit Event'), ['action' => 'edit', $event->Id]) ?> </li>
         <li><?= $this->Form->postLink(__('Delete Event'), ['action' => 'delete', $event->Id], ['confirm' => __('Are you sure you want to delete # {0}?', $event->Id)]) ?> </li>
         <li><?= $this->Html->link(__('List Events'), ['action' => 'index']) ?> </li>
@@ -11,7 +14,8 @@
         <li><?= $this->Html->link(__('New Equipment'), ['controller' => 'Equipment', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
-<div class="events view large-9 medium-8 columns content">
+<div id="main">
+    <div class="inner">
     <h3><?= h($event->Name) ?></h3>
     <table class="vertical-table">
         <tr>
@@ -36,11 +40,11 @@
         </tr>
         <tr>
             <th><?= __('Created') ?></th>
-            <td><?= h($event->Created) ?></td>
+            <td><?= h($event->created) ?></td>
         </tr>
         <tr>
             <th><?= __('Modified') ?></th>
-            <td><?= h($event->Modified) ?></td>
+            <td><?= h($event->modified) ?></td>
         </tr>
     </table>
 </div>

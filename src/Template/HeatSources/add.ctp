@@ -1,6 +1,7 @@
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+<!-- Menu -->
+<nav id="menu">
+    <h2><?= __('Menu') ?></h2>
+    <ul>
         <li><?= $this->Html->link(__('List Heat Sources'), ['action' => 'index']) ?></li>
     </ul>
 </nav>

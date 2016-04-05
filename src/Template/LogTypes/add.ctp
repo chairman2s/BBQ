@@ -1,6 +1,9 @@
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+<!-- add.ctp start -->
+
+<!-- Menu -->
+<nav id="menu">
+    <h2><?= __('Menu') ?></h2>
+    <ul>
         <li><?= $this->Html->link(__('List Log Types'), ['action' => 'index']) ?></li>
     </ul>
 </nav>

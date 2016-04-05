@@ -1,11 +1,15 @@
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+<!-- Menu -->
+<nav id="menu">
+    <h2><?= __('Menu') ?></h2>
+    <ul>
         <li><?= $this->Html->link(__('New Animal'), ['action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="animals index large-9 medium-8 columns content">
-    <h3><?= __('Animals') ?></h3>
+<div id="main">
+    <div class="inner">
+    <header>
+        <h1><a href=""><?= __('Animals'); ?></a></h1>
+    </header>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>

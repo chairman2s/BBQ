@@ -55,9 +55,10 @@ google.charts.setOnLoadCallback(drawLogScales);
   <?php
 $this->Html->scriptEnd();
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+<!-- Menu -->
+<nav id="menu">
+    <h2><?= __('Menu') ?></h2>
+    <ul>
         <li><?= $this->Html->link(__('New Probe Log'), ['action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Probes'), ['controller' => 'Probes', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Probe'), ['controller' => 'Probes', 'action' => 'add']) ?></li>
@@ -66,7 +67,10 @@ $this->Html->scriptEnd();
     </ul>
 </nav>
 
-<div class="probeLogs index large-9 medium-8 columns content">
-    <h3><?= __('Probe Logs') ?></h3>
+<div id="main">
+    <div class="inner">
+    <header>
+        <h1><a href=""<?= __('Probe Logs') ?></a></h1>
+    </header>
     <div id="chart_div"/>
 </div>

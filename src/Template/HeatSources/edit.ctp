@@ -1,6 +1,7 @@
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+<!-- Menu -->
+<nav id="menu">
+    <h2><?= __('Menu') ?></h2>
+    <ul>
         <li><?= $this->Form->postLink(
                 __('Delete'),
                 ['action' => 'delete', $heatSource->Id],
@@ -10,7 +11,11 @@
         <li><?= $this->Html->link(__('List Heat Sources'), ['action' => 'index']) ?></li>
     </ul>
 </nav>
-<div class="heatSources form large-9 medium-8 columns content">
+<div id="main">
+    <div class="inner">
+    <header>
+        <h1><a href=""><?= __('Heat soruce'); ?></a></h1>
+    </header>
     <?= $this->Form->create($heatSource) ?>
     <fieldset>
         <legend><?= __('Edit Heat Source') ?></legend>

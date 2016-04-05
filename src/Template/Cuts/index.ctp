@@ -1,13 +1,18 @@
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+<!-- Menu -->
+<nav id="menu">
+    <h2><?= __('Menu') ?></h2>
+    <ul>
         <li><?= $this->Html->link(__('New Cut'), ['action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Animals'), ['controller' => 'Animals', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Animal'), ['controller' => 'Animals', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="cuts index large-9 medium-8 columns content">
-    <h3><?= __('Cuts') ?></h3>
+<div id="main">
+    <div class="inner">
+    <header>
+        <h1><a href=""><?= __('Cuts');?></a></h1>
+    </header>
+               
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>

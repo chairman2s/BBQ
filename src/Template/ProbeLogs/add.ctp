@@ -1,6 +1,9 @@
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+<!-- add.ctp start -->
+
+<!-- Menu -->
+<nav id="menu">
+    <h2><?= __('Menu') ?></h2>
+    <ul>
         <li><?= $this->Html->link(__('List Probe Logs'), ['action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('List Probes'), ['controller' => 'Probes', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Probe'), ['controller' => 'Probes', 'action' => 'add']) ?></li>
@@ -8,7 +11,13 @@
         <li><?= $this->Html->link(__('New Event'), ['controller' => 'Events', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="probeLogs form large-9 medium-8 columns content">
+<div id="main">
+    <div class="inner">
+        <?php if ($this->fetch('title') != ''){?>
+     <header>
+        <h1><a href=""><?= $this->fetch('title') ?></a></h1>
+    </header>   
+        <?php } ?>
     <?= $this->Form->create($probeLog) ?>
     <fieldset>
         <legend><?= __('Add Probe Log') ?></legend>

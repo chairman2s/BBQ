@@ -1,14 +1,18 @@
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
+<!-- Menu -->
+<nav id="menu">
+    <h2><?= __('Menu') ?></h2>
+    <ul>
         <li><?= $this->Html->link(__('Edit Heat Source'), ['action' => 'edit', $heatSource->Id]) ?> </li>
         <li><?= $this->Form->postLink(__('Delete Heat Source'), ['action' => 'delete', $heatSource->Id], ['confirm' => __('Are you sure you want to delete # {0}?', $heatSource->Id)]) ?> </li>
         <li><?= $this->Html->link(__('List Heat Sources'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Heat Source'), ['action' => 'add']) ?> </li>
     </ul>
 </nav>
-<div class="heatSources view large-9 medium-8 columns content">
-    <h3><?= h($heatSource->Name) ?></h3>
+<div id="main">
+    <div class="inner">
+    <header>
+        <h1><a href=""><?= __($heatSource->Name); ?></a></h1>
+    </header>
     <table class="vertical-table">
         <tr>
             <th><?= __('Name') ?></th>
